@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Carts.WebApi.props" />
+</Project>

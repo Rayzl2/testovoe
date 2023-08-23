@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iNDDoysZcZU5Jsii7U1g21GAU30sMLMm4iwbDcu3NbslZLL6Q56xUWbX/RFM9ZeJdMbxv8GmGUoeYEx5uesc+g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vadim\\source\\repos\\task\\Carts.WebApi\\Carts.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512"
+  ],
+  "logs": []
+}
