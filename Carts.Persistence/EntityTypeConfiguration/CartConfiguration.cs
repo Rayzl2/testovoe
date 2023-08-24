@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Carts.Domain;
+using Npgsql;
 
 
 namespace Carts.Persistence.EntityTypeConfiguration
@@ -14,8 +15,9 @@ namespace Carts.Persistence.EntityTypeConfiguration
     {
       public void Configure(EntityTypeBuilder<Cart> builder)
         {
-            builder.HasKey(cart => cart.SessionId);
-            builder.HasIndex(cart => cart.SessionId);
+            builder.HasKey(cart => cart.machineId);
+            builder.HasIndex(cart => cart.SessionId).IsUnique();
+            builder.Property(cart => cart.SessionId);
             builder.Property(cart => cart.Goods);
 
         }

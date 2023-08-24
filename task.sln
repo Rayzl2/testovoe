@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastracture", "Infrastra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{FE931C96-CF9F-43E6-B312-8839C3926B32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carts.Domain", "Carts.Domain\Carts.Domain.csproj", "{87C8C58B-A541-45F9-A416-350390968C44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carts.Domain", "Carts.Domain\Carts.Domain.csproj", "{87C8C58B-A541-45F9-A416-350390968C44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carts.Application", "Carts.Application\Carts.Application.csproj", "{4284D7EA-39EF-44B8-AE22-2E45F1832AFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carts.Application", "Carts.Application\Carts.Application.csproj", "{4284D7EA-39EF-44B8-AE22-2E45F1832AFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carts.Persistence", "Carts.Persistence\Carts.Persistence.csproj", "{27369AAF-F78B-4D3C-B08C-F7D8BDD65D61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carts.Persistence", "Carts.Persistence\Carts.Persistence.csproj", "{27369AAF-F78B-4D3C-B08C-F7D8BDD65D61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carts.WebApi", "Carts.WebApi\Carts.WebApi.csproj", "{258C8049-ADEE-4E23-8766-50D161EB8478}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carts.WebApi", "Carts.WebApi\Carts.WebApi.csproj", "{258C8049-ADEE-4E23-8766-50D161EB8478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,3 +13,5 @@ C:\Users\vadim\source\repos\task\Carts.Application\obj\Debug\net7.0\Carts.Applic
 C:\Users\vadim\source\repos\task\Carts.Application\obj\Debug\net7.0\refint\Carts.Application.dll
 C:\Users\vadim\source\repos\task\Carts.Application\obj\Debug\net7.0\Carts.Application.pdb
 C:\Users\vadim\source\repos\task\Carts.Application\obj\Debug\net7.0\ref\Carts.Application.dll
+C:\Users\vadim\source\repos\task\Carts.Application\bin\Debug\net7.0\Carts.Application.runtimeconfig.json
+C:\Users\vadim\source\repos\task\Carts.Application\obj\Debug\net7.0\Carts.Application.genruntimeconfig.cache

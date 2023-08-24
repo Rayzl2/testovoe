@@ -16,7 +16,10 @@ namespace Carts.Application.Carts.Queries.GetCartDetails
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Cart, CartDetailsVM>().ForMember(cartVM => cartVM.Goods,
+            profile.CreateMap<Cart, CartDetailsVM>()
+                 .ForMember(cartVM => cartVM.SessionId,
+                opt => opt.MapFrom(cart => cart.SessionId))
+                .ForMember(cartVM => cartVM.Goods,
                 opt => opt.MapFrom(cart => cart.Goods));
         }
     }

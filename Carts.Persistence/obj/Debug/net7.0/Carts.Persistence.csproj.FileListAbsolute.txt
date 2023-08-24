@@ -15,3 +15,5 @@ C:\Users\vadim\source\repos\task\Carts.Persistence\obj\Debug\net7.0\Carts.Persis
 C:\Users\vadim\source\repos\task\Carts.Persistence\obj\Debug\net7.0\refint\Carts.Persistence.dll
 C:\Users\vadim\source\repos\task\Carts.Persistence\obj\Debug\net7.0\Carts.Persistence.pdb
 C:\Users\vadim\source\repos\task\Carts.Persistence\obj\Debug\net7.0\ref\Carts.Persistence.dll
+C:\Users\vadim\source\repos\task\Carts.Persistence\bin\Debug\net7.0\Carts.Persistence.runtimeconfig.json
+C:\Users\vadim\source\repos\task\Carts.Persistence\obj\Debug\net7.0\Carts.Persistence.genruntimeconfig.cache

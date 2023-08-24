@@ -1,6 +1,38 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using Carts.Persistence;
 
-app.MapGet("/", () => "Hello World!");
+namespace Carts.WebApi
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
 
-app.Run();
+            using (var scope = host.Services.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+                try
+                {
+
+                    var cartsDBContext = serviceProvider.GetRequiredService<CartsDbContext>();
+                    DBInit.InitCartsDbContext(cartsDBContext);
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            host.Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}

@@ -8,7 +8,12 @@ namespace Carts.Persistence
 {
     public class DBInit
     {
-        public static void Init(CartsDbContext context)
+        public static void InitCartsDbContext(CartsDbContext context)
+        {
+            context.Database.EnsureCreated();
+        }
+
+        public static void InitGoodsDbContext(GoodsDbContext context)
         {
             context.Database.EnsureCreated();
         }

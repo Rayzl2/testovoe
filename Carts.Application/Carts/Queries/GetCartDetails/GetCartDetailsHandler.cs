@@ -12,20 +12,20 @@ using Carts.Domain;
 
 namespace Carts.Application.Carts.Queries.GetCartDetails
 {
-    public class GetCartDetailsHandler : IRequest<GetCartDetails>
+    public class GetCartDetailsHandler : IRequestHandler<GetCartDetails, CartDetailsVM>
     {
 
         private readonly ICartsDBContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetCartDetailsHandler(ICartsDBContext dbContext, IMapper mapper)
-        {
+        public GetCartDetailsHandler(ICartsDBContext dbContext, IMapper mapper) =>
+        
             (_dbContext, _mapper) = (dbContext, mapper);
-        }
+        
 
         public async Task<CartDetailsVM> Handle(GetCartDetails request, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Carts.FirstOrDefaultAsync(cart => cart.SessionId == request.SessionId);
+            var entity = await _dbContext.Carts.FirstOrDefaultAsync(cart => cart.machineId == request.machineId, cancellationToken);
 
             if (entity == null)
             {

@@ -13,15 +13,16 @@ namespace Carts.Application.Carts.Commands.CreatingCart
     {
 
         private readonly ICartsDBContext _dbContext;
-        public CreateCartHandler(ICartsDBContext dbContext)
-        {
+        public CreateCartHandler(ICartsDBContext dbContext) =>
+    
             _dbContext = dbContext;
-        }
+        
         public async Task<Guid> Handle(CreateCart request, CancellationToken cancellationToken)
         {
             var cart = new Cart
             {
-                SessionId = request.SessionId,
+                machineId = request.machineId,
+                SessionId = Guid.NewGuid(),
                 Goods = request.Goods
             };
 

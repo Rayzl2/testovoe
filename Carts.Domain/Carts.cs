@@ -8,6 +8,7 @@ namespace Carts.Domain
 {
     public class Cart
     {
+        public Guid machineId { get; set; }
         public Guid SessionId { get; set; }
         public string Goods { get; set; }
 

@@ -15,7 +15,9 @@ namespace Carts.Persistence
 
         public DbSet<Cart> Carts { get; set; }
 
-        public CartsDbContext(DbContextOptions<CartsDbContext> options) : base(options) { }
+        public CartsDbContext(DbContextOptions<CartsDbContext> options) : base(options) {
+            Database.EnsureCreated();
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
