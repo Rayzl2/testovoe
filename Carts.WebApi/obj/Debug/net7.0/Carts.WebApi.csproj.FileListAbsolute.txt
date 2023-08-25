@@ -74,3 +74,12 @@ C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Humanizer.dll
 C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

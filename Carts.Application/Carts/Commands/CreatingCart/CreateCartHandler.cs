@@ -23,7 +23,7 @@ namespace Carts.Application.Carts.Commands.CreatingCart
             {
                 machineId = request.machineId,
                 SessionId = Guid.NewGuid(),
-                Goods = request.Goods
+                Goods = "Корзина пуста"
             };
 
             await _dbContext.Carts.AddAsync(cart, cancellationToken);

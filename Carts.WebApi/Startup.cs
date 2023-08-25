@@ -3,6 +3,8 @@ using Carts.Application;
 using Carts.Application.Common.Mapping;
 using Carts.Application.Interfaces;
 using Carts.Persistence;
+using Carts.WebApi.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Npgsql;
 
 namespace Carts.WebApi
@@ -38,6 +40,20 @@ namespace Carts.WebApi
                     policy.AllowAnyOrigin();
                 });
             });
+
+            services.AddAuthentication(cfg =>
+            {
+                cfg.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+
+                cfg.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer("Bearer", opt =>
+                {
+                    opt.Authority = "https://localhost:7275";
+                    opt.Audience = "CartWebApi";
+                    opt.RequireHttpsMetadata = false;
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,9 +64,12 @@ namespace Carts.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.ClientExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

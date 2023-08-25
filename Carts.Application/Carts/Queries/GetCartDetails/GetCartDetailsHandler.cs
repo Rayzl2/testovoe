@@ -25,7 +25,7 @@ namespace Carts.Application.Carts.Queries.GetCartDetails
 
         public async Task<CartDetailsVM> Handle(GetCartDetails request, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Carts.FirstOrDefaultAsync(cart => cart.machineId == request.machineId, cancellationToken);
+            var entity = await _dbContext.Carts.FirstOrDefaultAsync(cart => cart.SessionId == request.SessionId, cancellationToken);
 
             if (entity == null)
             {

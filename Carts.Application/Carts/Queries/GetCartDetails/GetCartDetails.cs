@@ -10,6 +10,6 @@ namespace Carts.Application.Carts.Queries.GetCartDetails
     public class GetCartDetails : IRequest<CartDetailsVM>
     {
         public Guid SessionId { get; set; }
-        public Guid machineId { get; set; }
+       // public Guid machineId { get; set; }
     }
 }

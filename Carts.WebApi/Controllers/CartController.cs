@@ -6,6 +6,7 @@ using Carts.Application.Carts.Queries.GetCartDetails;
 using Carts.Application.Carts.Queries.GetCartList;
 using Carts.Persistence;
 using Carts.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Carts.WebApi.Controllers
@@ -22,11 +23,13 @@ namespace Carts.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<CartListVM>> GetAll()
         {
             var query = new GetCartList
             {
-                
+                machineId = Guid.Parse("8d4f111e-42d5-11ee-be56-0242ac120001")
+
             };
             var vm = await Mediator.Send(query);
 
@@ -34,16 +37,17 @@ namespace Carts.WebApi.Controllers
         }
 
         [HttpGet("{SessionId}")]
-        public async Task<ActionResult<CartDetailsVM>> GetCart()
+        [Authorize]
+        public async Task<ActionResult<CartDetailsVM>> GetCart(Guid SessionId)
         {
             try
             {
                 var query = new GetCartDetails
                 {
-                   // SessionId = SessionId
+                   SessionId = SessionId
                 };
 
-                var vm = await Mediator.Send(1);
+                var vm = await Mediator.Send(query);
 
                 return Ok(vm);
             }
@@ -54,31 +58,42 @@ namespace Carts.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateCartDto createCartDto)
         {
-            var command = _mapper.Map<CreateCart>(createCartDto);
-            // Развитие под идентификаю машин command.machineId = machineId;
-            var cartId = await Mediator.Send(command);
+            try
+            {
+                var command = _mapper.Map<CreateCart>(createCartDto);
+                command.machineId = new Guid();
+                var cartId = await Mediator.Send(command);
 
-            return Ok(cartId);
+                return Ok(cartId);
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
 
         [HttpPut]
+        [Authorize]
         public async Task<ActionResult<Guid>> Update([FromBody] UpdateCartDto updateCartDto)
         {
             var command = _mapper.Map<UpdateCart>(updateCartDto);
-            // Развитие под идентификаю машин command.machineId = machineId;
+            command.machineId = new Guid("8d4f111e-42d5-11ee-be56-0242ac120002");
             await Mediator.Send(command);
 
             return NoContent();
         }
 
         [HttpDelete("{SessionId}")]
+        [Authorize]
         public async Task<IActionResult> Delete(Guid SessionId)
         {
             var query = new DeleteCart
             {
-                SessionId = SessionId
+                SessionId = SessionId,
+                machineId = new Guid("8d4f111e-42d5-11ee-be56-0242ac120002")
             };
 
             await Mediator.Send(query);

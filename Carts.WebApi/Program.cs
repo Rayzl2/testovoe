@@ -1,4 +1,5 @@
 using Carts.Persistence;
+using FluentValidation;
 
 namespace Carts.WebApi
 {

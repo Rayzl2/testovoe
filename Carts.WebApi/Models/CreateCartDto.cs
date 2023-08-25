@@ -8,13 +8,12 @@ namespace Carts.WebApi.Models
 {
     public class CreateCartDto : IMap<CreateCart>
     {
-        public string Goods { get; set; }
+       
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CreateCartDto, CreateCart>()
-                .ForMember(cartVM => cartVM.Goods,
-                opt => opt.MapFrom(cart => cart.Goods));
+            profile.CreateMap<CreateCartDto, CreateCart>();
+                
         }
     }
 }
