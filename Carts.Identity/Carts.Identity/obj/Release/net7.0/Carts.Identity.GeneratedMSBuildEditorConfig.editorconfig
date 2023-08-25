@@ -10,8 +10,12 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Carts.Identity
 build_property.RootNamespace = Carts.Identity
 build_property.ProjectDir = C:\Users\vadim\source\repos\task\testovoe\Carts.Identity\Carts.Identity\
-build_property.RazorLangVersion = 7.0
+build_property.RazorLangVersion = 2.1
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\vadim\source\repos\task\testovoe\Carts.Identity\Carts.Identity
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/vadim/source/repos/task/testovoe/Carts.Identity/Carts.Identity/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

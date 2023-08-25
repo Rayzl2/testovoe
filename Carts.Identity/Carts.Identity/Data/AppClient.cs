@@ -4,5 +4,6 @@ namespace Carts.Identity.Data
 {
     public class AppClient : IdentityUser
     {
+
     }
 }

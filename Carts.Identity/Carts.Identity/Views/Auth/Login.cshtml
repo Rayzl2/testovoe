@@ -1,0 +1,13 @@
+﻿
+
+<form asp-controller="Auth" asp-action="Login" method="post">
+    <input type="hidden" asp-for="returnUrl"/>
+
+    <div class="fields">
+        <input asp-for="machineId" />
+        <input asp-for="key" />
+    </div>
+    <button type="submit"></button>
+
+
+</form>

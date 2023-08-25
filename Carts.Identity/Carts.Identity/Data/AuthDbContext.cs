@@ -14,8 +14,16 @@ namespace Carts.Identity.Data
 
             builder.Entity<AppClient>(entity => entity.ToTable(name: "Clients"));
             builder.Entity<IdentityRole>(entity => entity.ToTable(name: "Roles"));
+            builder.Entity<IdentityUserRole<string>>(entity =>
+                entity.ToTable(name: "UserRoles"));
+            builder.Entity<IdentityUserClaim<string>>(entity =>
+                entity.ToTable(name: "UserClaim"));
+            builder.Entity<IdentityUserLogin<string>>(entity =>
+                entity.ToTable("UserLogins"));
             builder.Entity<IdentityUserToken<string>>(entity =>
                 entity.ToTable("UserTokens"));
+            builder.Entity<IdentityRoleClaim<string>>(entity =>
+                entity.ToTable("RoleClaims"));
 
             builder.ApplyConfiguration(new AppClientConfiuguration());
         }

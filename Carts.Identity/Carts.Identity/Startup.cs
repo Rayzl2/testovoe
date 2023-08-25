@@ -2,6 +2,8 @@
 using IdentityServer4.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 
 namespace Carts.Identity
 {
@@ -14,22 +16,23 @@ namespace Carts.Identity
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = AppConfiguration.GetValue<string>("WebApiDatabase");
+            var connection = AppConfiguration.GetConnectionString("WebApiDatabase");
 
             services.AddDbContext<AuthDbContext>(opt => {
+                
                 opt.UseNpgsql(connection);
             });
 
-            services.AddIdentity<AppClient, IdentityRole>(cfg =>
-            {
-
-            })
+            services.AddIdentity<AppClient, IdentityRole>()
                 .AddEntityFrameworkStores<AuthDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders(); ;
+
 
             services.ConfigureApplicationCookie(cfg =>
             {
                 cfg.Cookie.Name = "cart_auth";
+                cfg.LoginPath = "/Auth/Login";
+                cfg.LogoutPath = "/Auth/Logout";
             });
 
             services.AddIdentityServer()
@@ -39,6 +42,8 @@ namespace Carts.Identity
                 .AddInMemoryApiScopes(Configuration.ApiScopes)
                 .AddInMemoryClients(Configuration.Clients)
                 .AddDeveloperSigningCredential();
+
+            services.AddControllersWithViews();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -52,10 +57,7 @@ namespace Carts.Identity
             app.UseIdentityServer();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
