@@ -10,8 +10,8 @@ namespace Carts.Application.Carts.Commands.UpdatingCart
     public class UpdateCartValidation : AbstractValidator<UpdateCart>
     {
         public UpdateCartValidation() {
-            RuleFor(updateCart => updateCart.machineId).NotEqual(Guid.Empty);
-            RuleFor(updateCart => updateCart.SessionId).NotEqual(Guid.Empty);
+            //RuleFor(updateCart => updateCart.Goods).NotEqual(String.Empty);
+            //RuleFor(updateCart => updateCart.SessionId).NotEqual(Guid.Empty);
         }
     }
 }

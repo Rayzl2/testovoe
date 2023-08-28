@@ -19,7 +19,7 @@ namespace Carts.Persistence
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new CartConfiguration());
+            builder.ApplyConfiguration(new GoodConfiguration());
             base.OnModelCreating(builder);
         }
 

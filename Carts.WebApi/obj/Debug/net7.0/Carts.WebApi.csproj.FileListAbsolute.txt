@@ -83,3 +83,14 @@ C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.Identit
 C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\obj\Debug\net7.0\Carts.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Carts.WebApi.xml
+C:\Users\vadim\source\repos\task\Carts.WebApi\obj\Debug\net7.0\Carts.WebApi.xml
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\System.Web.Http.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\vadim\source\repos\task\Carts.WebApi\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

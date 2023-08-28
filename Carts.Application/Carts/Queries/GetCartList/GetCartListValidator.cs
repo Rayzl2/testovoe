@@ -10,7 +10,7 @@ namespace Carts.Application.Carts.Queries.GetCartList
     public class GetCartListValidator : AbstractValidator<GetCartList>
     {
         public GetCartListValidator() {
-            RuleFor(cartList => cartList.machineId).NotEqual(Guid.Empty);
+            //RuleFor(cartList => cartList.machineId).NotEqual(Guid.Empty);
         }
     }
 }

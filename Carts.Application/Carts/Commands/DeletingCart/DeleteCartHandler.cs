@@ -10,14 +10,14 @@ using Carts.Domain;
 
 namespace Carts.Application.Carts.Commands.DeletingCart
 {
-    public class DeleteCartHandler : IRequest<DeleteCart>
+    public class DeleteCartHandler : IRequestHandler<DeleteCart, Guid>
     {
         private readonly ICartsDBContext _dbContext;
         public DeleteCartHandler(ICartsDBContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public async Task<Unit> Handle(DeleteCart request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(DeleteCart request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Carts.FindAsync(new object[] { request.SessionId }, cancellationToken);
 
@@ -28,8 +28,8 @@ namespace Carts.Application.Carts.Commands.DeletingCart
 
             _dbContext.Carts.Remove(entity);
 
-            await _dbContext.SaveChangesAsync(cancellationToken);
-            return Unit.Value;
+            var res = await _dbContext.SaveChangesAsync(cancellationToken);
+            return request.SessionId;
         }
     }
 }

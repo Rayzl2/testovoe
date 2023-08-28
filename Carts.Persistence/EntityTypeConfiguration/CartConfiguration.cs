@@ -16,7 +16,7 @@ namespace Carts.Persistence.EntityTypeConfiguration
       public void Configure(EntityTypeBuilder<Cart> builder)
         {
             builder.HasKey(cart => cart.machineId);
-            builder.HasIndex(cart => cart.SessionId).IsUnique();
+            builder.HasIndex(cart => cart.machineId);
             builder.Property(cart => cart.SessionId);
             builder.Property(cart => cart.Goods);
 

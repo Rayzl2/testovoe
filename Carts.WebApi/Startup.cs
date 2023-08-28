@@ -5,6 +5,7 @@ using Carts.Application.Interfaces;
 using Carts.Persistence;
 using Carts.WebApi.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Npgsql;
 
 namespace Carts.WebApi
@@ -25,6 +26,7 @@ namespace Carts.WebApi
             {
                 config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
                 config.AddProfile(new AssemblyMappingProfile(typeof(ICartsDBContext).Assembly));
+                config.AddProfile(new AssemblyMappingProfile(typeof(IGoodsDBContext).Assembly));
             });
 
             services.AddApplication();
@@ -41,6 +43,13 @@ namespace Carts.WebApi
                 });
             });
 
+            services.AddSwaggerGen(cfg =>
+            {
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                cfg.IncludeXmlComments(xmlPath);
+            });
+
             services.AddAuthentication(cfg =>
             {
                 cfg.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -54,7 +63,8 @@ namespace Carts.WebApi
                     opt.RequireHttpsMetadata = false;
                 });
 
-        }
+            }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -64,6 +74,14 @@ namespace Carts.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+
+            app.UseSwagger();
+            app.UseSwaggerUI(cfg =>
+            {
+                cfg.RoutePrefix = String.Empty;
+                cfg.SwaggerEndpoint("swagger/v1/swagger.json", "RetailCarts API");
+                cfg.DocumentTitle = "RetailCarts API V1";
+            });
             app.ClientExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();

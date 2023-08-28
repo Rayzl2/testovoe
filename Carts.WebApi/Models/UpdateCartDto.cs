@@ -7,17 +7,17 @@ namespace Carts.WebApi.Models
 {
     public class UpdateCartDto :IMap<UpdateCart>
     {
-        public Guid SessionId { get; set; }
-        public string Goods { get; set; }
+       // public Guid SessionId { get; set; }
+       // public string Goods { get; set; }
 
         public void Mapping (Profile profile)
         {
             profile.CreateMap<UpdateCartDto, UpdateCart>()
-                .ForMember(cartVM => cartVM.SessionId,
-                opt => opt.MapFrom(cart => cart.SessionId))
+               /*.ForMember(cartVM => cartVM.SessionId,
+               opt => opt.MapFrom(cart => cart.SessionId))
 
-               .ForMember(cartVM => cartVM.Goods,
-               opt => opt.MapFrom(cart => cart.Goods));
+              .ForMember(cartVM => cartVM.Goods,
+              opt => opt.MapFrom(cart => cart.Goods))*/;
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yE1vpBTadoFZTVma6PKn+XJl4bh34IdPRZPtxSHnBFi3Q+5cXB+vOksVIXaxkId3hckNjmaOkKAHOGCX4B9y2A==",
+  "dgSpecHash": "/EGfGE8vksrhyYQRh0Py2jtXFkseFRbv0io5dhsLP6Bo3z9/4K2eev65yH2Tumd99tQ7rGOk3LMwMb0BrnLaqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vadim\\source\\repos\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj",
+  "projectFilePath": "C:\\Users\\vadim\\source\\repos\\task\\testovoe\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vadim\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\vadim\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",

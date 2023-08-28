@@ -20,6 +20,7 @@ namespace Carts.Persistence
             services.AddDbContext<CartsDbContext>(options =>
             {
                 options.UseNpgsql(connection);
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
             services.AddScoped<ICartsDBContext>(provider => provider.GetService<CartsDbContext>());
 

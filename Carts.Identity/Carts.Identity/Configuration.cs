@@ -6,7 +6,8 @@ namespace Carts.Identity
 {
     public static class Configuration
     {
-        public static IEnumerable<ApiScope> ApiScopes => new List<ApiScope>
+        public static IEnumerable<ApiScope> ApiScopes => 
+        new List<ApiScope>
         {
                 new ApiScope("CartWebApi", "Web Api")
         };
@@ -31,29 +32,16 @@ namespace Carts.Identity
             {
                 ClientId = "carts-webapi",
                 ClientName = "Carts Web",
-                AllowedGrantTypes = GrantTypes.Code,
-                RequireClientSecret = false,
-                RequirePkce = true,
-                RedirectUris =
-                {
-                    "http://.../auth-getstarted"
-                },
-                AllowedCorsOrigins =
-                {
-                    "http://..."
-                },
-                PostLogoutRedirectUris =
-                {
-                    "http:/.../finished-work"
-                },
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                ClientSecrets = { new Secret("verysecret".Sha256()) },
                 AllowedScopes =
                 {
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
                     "CartWebApi"
-                },
-                AllowAccessTokensViaBrowser = true
+                }
             }
+
         };
     }
 }

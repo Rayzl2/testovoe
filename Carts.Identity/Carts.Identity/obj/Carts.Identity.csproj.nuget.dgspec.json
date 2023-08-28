@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vadim\\source\\repos\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj": {}
+    "C:\\Users\\vadim\\source\\repos\\task\\testovoe\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vadim\\source\\repos\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj": {
+    "C:\\Users\\vadim\\source\\repos\\task\\testovoe\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\task\\testovoe\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj",
         "projectName": "Carts.Identity",
-        "projectPath": "C:\\Users\\vadim\\source\\repos\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj",
+        "projectPath": "C:\\Users\\vadim\\source\\repos\\task\\testovoe\\Carts.Identity\\Carts.Identity\\Carts.Identity.csproj",
         "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vadim\\source\\repos\\Carts.Identity\\Carts.Identity\\obj\\",
+        "outputPath": "C:\\Users\\vadim\\source\\repos\\task\\testovoe\\Carts.Identity\\Carts.Identity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

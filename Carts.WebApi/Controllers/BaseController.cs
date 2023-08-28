@@ -19,5 +19,8 @@ namespace Carts.WebApi.Controllers
 
         internal Guid SessionId => !User.Identity.IsAuthenticated ? Guid.Empty :
             Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+        internal Guid Goods => !User.Identity.IsAuthenticated ? Guid.Empty :
+            Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
     }
 }

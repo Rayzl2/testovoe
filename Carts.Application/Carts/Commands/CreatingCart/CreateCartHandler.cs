@@ -25,8 +25,8 @@ namespace Carts.Application.Carts.Commands.CreatingCart
                 SessionId = Guid.NewGuid(),
                 Goods = "Корзина пуста"
             };
-
-            await _dbContext.Carts.AddAsync(cart, cancellationToken);
+           // _dbContext.Carts.Attach(cart);
+            await _dbContext.Carts.AddAsync(cart);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
             return cart.SessionId;

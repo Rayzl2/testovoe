@@ -7,6 +7,7 @@ namespace Carts.WebApi.Middleware
 {
     public class CustomExceptionHandler
     {
+        // пока что траблы с body запросами поэтому не юзаю
         private readonly RequestDelegate _requestDelegate;
 
         public CustomExceptionHandler(RequestDelegate requestDelegate)
@@ -27,6 +28,7 @@ namespace Carts.WebApi.Middleware
 
         Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
+            
             var status = HttpStatusCode.InternalServerError;
             var res = string.Empty;
 
@@ -42,7 +44,7 @@ namespace Carts.WebApi.Middleware
                     break;
             }
 
-            context.Response.ContentType = "application/json";
+            context.Response.ContentType = "application/json; charset=utf-8";
             context.Response.StatusCode = (int)status;
 
             if (res == string.Empty)

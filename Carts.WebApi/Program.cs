@@ -19,6 +19,9 @@ namespace Carts.WebApi
                     var cartsDBContext = serviceProvider.GetRequiredService<CartsDbContext>();
                     DBInit.InitCartsDbContext(cartsDBContext);
 
+                    var goodsDbContext = serviceProvider.GetRequiredService<GoodsDbContext>();
+                    DBInit.InitGoodsDbContext(goodsDbContext);
+
                 }
                 catch (Exception ex)
                 {

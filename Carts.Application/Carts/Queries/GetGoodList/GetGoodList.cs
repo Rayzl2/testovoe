@@ -9,6 +9,6 @@ namespace Carts.Application.Carts.Queries.GetGoodList
 {
     public class GetGoodList : IRequest<GoodListVM>
     {
-        public Guid GoodId { get; set; }
+        
     }
 }

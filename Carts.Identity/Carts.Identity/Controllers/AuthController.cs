@@ -1,8 +1,15 @@
 ﻿using Carts.Identity.Data;
 using Carts.Identity.Models;
+using IdentityServer4.Configuration;
+using IdentityServer4.Models;
+using IdentityServer4;
 using IdentityServer4.Services;
+using IdentityServer4.Validation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
+using IdentityServer4.Extensions;
 
 namespace Carts.Identity.Controllers
 {
@@ -17,6 +24,8 @@ namespace Carts.Identity.Controllers
         {
             (_signInManager, _userManager, _interaction) = (signInManager, userManager, interaction);
         }
+
+       
 
         [HttpGet]
         public IActionResult Login(string returnUrl)

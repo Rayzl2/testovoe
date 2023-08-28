@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Carts.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Carts.WebApi.Controllers.CartController.GetAll">
+             <summary>
+             Getting All active carts/sessions in this time 
+             Получение всех активных сессий/корзин на данный момент в системе
+             </summary>
+             <remarks>
+             Sample request:
+             
+                     [GET] https://localhost:7294/api/cart/
+             Response:
+             
+                     carts:[{
+                         "sessionId": "7c0d068b-73a9-47b4-8298-b5d15850b57f",
+                         "goods": "string"
+                     },
+                     {
+                         "sessionId": "9a2g068b-73a9-47b4-8298-c5a55830b17f",
+                         "goods": "string"
+                     }]
+            
+             </remarks>
+             <response code="200">Result has got success!
+             Результат успешно получен!</response>
+             <response code="401">Oops... Auth is failed
+             Упс...Аутентификация не прошла :|</response>
+             <response code="500">Intertnal Error. Get Callback from API developer. He will fix it all
+             Ошибка сервера. Сообщите разработчику API. Он все починит</response>
+        </member>
+        <member name="M:Carts.WebApi.Controllers.CartController.GetCart(System.Guid)">
+             <summary>
+             Getting details of current cart/session in this time 
+             Получение деталей сессий/корзин на данный момент в системе
+             </summary>
+             <remarks>
+             Sample request:
+             
+                     [GET] https://localhost:7294/api/cart/7c0d068b-73a9-47b4-8298-b5d15850b57f     
+             Response:
+             
+                     carts:[{
+                         "sessionId": "7c0d068b-73a9-47b4-8298-b5d15850b57f",
+                         "goods": "string"
+                     }]
+            
+             </remarks>
+             <response code="200">Result has got success!
+             Результат успешно получен!</response>
+             <response code="401">Oops... Auth is failed
+             Упс...Аутентификация не прошла :|</response>
+             <response code="500">Intertnal Error. Get Callback from API developer. He will fix it all
+             Ошибка сервера. Сообщите разработчику API. Он все починит</response>
+        </member>
+        <member name="M:Carts.WebApi.Controllers.CartController.Create(Carts.WebApi.Models.CreateCartDto,System.Guid)">
+            <summary>
+            Creating new session for work
+            Создание новой сессии для работы
+            </summary>
+            <remarks>
+            Sample request:
+            
+                    [POST] https://localhost:7294/api/cart/8d4f111e-42d5-11ee-be56-0242ac120001
+                
+            Response:
+            
+                    {SessiondId}
+                
+            </remarks>
+            <response code="204">Result has got success!
+            Результат успешно получен!</response>
+            <response code="401">Oops... Auth is failed
+            Упс...Аутентификация не прошла :|</response>
+            <response code="500">Intertnal Error. Get Callback from API developer. He will fix it all
+            Ошибка сервера. Сообщите разработчику API. Он все починит</response>
+        </member>
+        <member name="M:Carts.WebApi.Controllers.CartController.Update(Carts.WebApi.Models.UpdateCartDto,System.String,System.Guid,System.Guid)">
+            <summary>
+            Updating session for work
+            Обновление сессии для работы
+            </summary>
+            <remarks>
+            Sample request:
+            
+                    [PUT] https://localhost:7294/api/cart/8d4f111e-42d5-11ee-be56-0242ac120001/7c0d068b-73a9-47b4-8298-b5d15850b57f/1-Ferrero-249$;7-Сыр-120$
+                
+            Response:
+            
+                    NoContent
+                
+            </remarks>
+            <response code="204">Changes are supplied!
+            Результат успешно получен!</response>
+            <response code="401">Oops... Auth is failed
+            Упс...Аутентификация не прошла :|</response>
+            <response code="500">Intertnal Error. Get Callback from API developer. He will fix it all
+            Ошибка сервера. Сообщите разработчику API. Он все починит</response>
+        </member>
+        <member name="M:Carts.WebApi.Controllers.CartController.Delete(System.Guid,System.Guid)">
+            <summary>
+            Deleting session for fatal ending of work
+            Принудительное удаление сессии
+            </summary>
+            <remarks>
+            Sample request:
+            
+                    [DELETE] https://localhost:7294/api/cart/8d4f111e-42d5-11ee-be56-0242ac120001/7c0d068b-73a9-47b4-8298-b5d15850b57f
+                
+            Response:
+            
+                    NoContent
+                
+            </remarks>
+            <response code="204">Result has got success!
+            Результат успешно получен!</response>
+            <response code="401">Oops... Auth is failed
+            Упс...Аутентификация не прошла :|</response>
+            <response code="500">Intertnal Error. Get Callback from API developer. He will fix it all
+            Ошибка сервера. Сообщите разработчику API. Он все починит</response>
+        </member>
+        <member name="M:Carts.WebApi.Controllers.GoodController.GetAll">
+            <summary>
+            Getting All goods from DB in this time 
+            Получение всех товаров из БД на данный момент в системе
+            </summary>
+            <remarks>You should just press button to get all goods of this web application. (Execute button)
+            
+            Для того, чтобы получить все товары достаточно нажать кнопку execute</remarks>
+            <response code="200">Result has got succes!
+            Результат успешно получен!</response>
+            <response code="401">Oops... Auth is failed
+            Упс...Аутентификация не прошла :|</response>
+            <response code="500">Intertnal Error. Get Callback from API developer. He will fix it all
+            Ошибка сервера. Сообщите разработчику API. Он все починит</response>
+        </member>
+    </members>
+</doc>
