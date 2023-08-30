@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 
 namespace Carts.Application.Common.Mapping
@@ -17,6 +12,7 @@ namespace Carts.Application.Common.Mapping
 
         private void ApplyMappingsFromAssembly(Assembly assembly)
         {
+            // СООТНОШЕНИЕ ТИПОВ ДАННЫХ МЕЖДУ ПОСТУПАЮЩИМИ ДАННЫМИ
             var types = assembly.GetExportedTypes()
                 .Where(type => type.GetInterfaces()
                     .Any(any => any.IsGenericType && any.GetGenericTypeDefinition() == typeof(IMap<>)))
@@ -25,8 +21,7 @@ namespace Carts.Application.Common.Mapping
             foreach (var item in types)
             {
                 var instance = Activator.CreateInstance(item);
-
-                var methodInfo = item.GetMethod("Mapping");
+                var methodInfo = item.GetMethod("Mapping"); // НАЗВАНИЕ МЕТОДА ИНТЕРФЕЙСА
                 methodInfo?.Invoke(instance, new object[] { this });
             }
         }
