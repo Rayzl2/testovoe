@@ -1,11 +1,6 @@
-﻿using Carts.Application.Common.Exceptions;
+using Carts.Application.Common.Exceptions;
 using Carts.Application.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Carts.Domain;
 
 namespace Carts.Application.Carts.Commands.DeletingCart
@@ -19,6 +14,7 @@ namespace Carts.Application.Carts.Commands.DeletingCart
         }
         public async Task<Guid> Handle(DeleteCart request, CancellationToken cancellationToken)
         {
+            // ПОЛУЧЕНИЕ ОБЪЕКТА ПО КЛЮЧУ SESSIONID
             var entity = await _dbContext.Carts.FindAsync(new object[] { request.SessionId }, cancellationToken);
 
             if (entity == null)
