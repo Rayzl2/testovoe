@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Carts.Application.Carts.Queries.GetCartList;
+using AutoMapper;
 using Carts.Application.Carts.Queries.GetGoodList;
 using Microsoft.AspNetCore.Mvc;
 
