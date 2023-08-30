@@ -1,14 +1,11 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Carts.Application.Carts.Commands.CreatingCart;
 using Carts.Application.Carts.Commands.DeletingCart;
 using Carts.Application.Carts.Commands.UpdatingCart;
 using Carts.Application.Carts.Queries.GetCartDetails;
 using Carts.Application.Carts.Queries.GetCartList;
-using Carts.Persistence;
 using Carts.WebApi.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Web.Http.Description;
 
 namespace Carts.WebApi.Controllers
 {
