@@ -5,8 +5,6 @@ using Carts.Application.Interfaces;
 using Carts.Persistence;
 using Carts.WebApi.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
-using Npgsql;
 
 namespace Carts.WebApi
 {
