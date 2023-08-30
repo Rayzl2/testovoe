@@ -1,12 +1,7 @@
-﻿using Carts.Application.Interfaces;
+using Carts.Application.Interfaces;
 using Carts.Domain;
 using Carts.Persistence.EntityTypeConfiguration;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Carts.Persistence
 {
