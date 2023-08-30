@@ -12,8 +12,7 @@ namespace Carts.WebApi
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        // инициализация конфигурации данных
         public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration) => Configuration = configuration;
@@ -21,7 +20,7 @@ namespace Carts.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 
-
+            // инициализация автоматического маппинга по необходимым интерфейсам контекстов каждой из таблиц
             services.AddAutoMapper(config =>
             {
                 config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
@@ -33,6 +32,7 @@ namespace Carts.WebApi
             services.AddPersistence(Configuration);
             services.AddControllers();
 
+            // разрешение методов передачи данных
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll", policy =>
@@ -42,14 +42,14 @@ namespace Carts.WebApi
                     policy.AllowAnyOrigin();
                 });
             });
-
+            // генерация xml файла для Swagger
             services.AddSwaggerGen(cfg =>
             {
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 cfg.IncludeXmlComments(xmlPath);
             });
-
+            // инциализация метода авторизации в веб-апи
             services.AddAuthentication(cfg =>
             {
                 cfg.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -74,7 +74,7 @@ namespace Carts.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-
+            // инициализация Swagger
             app.UseSwagger();
             app.UseSwaggerUI(cfg =>
             {
@@ -82,6 +82,7 @@ namespace Carts.WebApi
                 cfg.SwaggerEndpoint("swagger/v1/swagger.json", "RetailCarts API");
                 cfg.DocumentTitle = "RetailCarts API V1";
             });
+            
             app.ClientExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
