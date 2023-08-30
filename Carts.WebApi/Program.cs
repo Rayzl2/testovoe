@@ -1,5 +1,4 @@
 using Carts.Persistence;
-using FluentValidation;
 
 namespace Carts.WebApi
 {
@@ -10,15 +9,16 @@ namespace Carts.WebApi
             CreateHostBuilder(args).Build().Run();
             var host = CreateHostBuilder(args).Build();
 
+            // добавления источника данных
             using (var scope = host.Services.CreateScope())
             {
                 var serviceProvider = scope.ServiceProvider;
                 try
                 {
-
+                    // инициализация таблицы корзин
                     var cartsDBContext = serviceProvider.GetRequiredService<CartsDbContext>();
                     DBInit.InitCartsDbContext(cartsDBContext);
-
+                    // инициализация таблицы товаров
                     var goodsDbContext = serviceProvider.GetRequiredService<GoodsDbContext>();
                     DBInit.InitGoodsDbContext(goodsDbContext);
 
