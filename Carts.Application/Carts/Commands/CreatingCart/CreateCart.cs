@@ -1,6 +1,4 @@
-﻿using MediatR;
-using System;
-
+using MediatR;
 
 namespace Carts.Application.Carts.Commands.CreatingCart
 {
