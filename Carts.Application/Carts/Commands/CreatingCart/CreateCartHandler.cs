@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MediatR;
 using Carts.Domain;
 using Carts.Application.Interfaces;
 
-namespace Carts.Application.Carts.Commands.CreatingCart 
+namespace Carts.Application.Carts.Commands.CreatingCart
 {
     public class CreateCartHandler : IRequestHandler<CreateCart, Guid>
     {
@@ -19,6 +14,7 @@ namespace Carts.Application.Carts.Commands.CreatingCart
         
         public async Task<Guid> Handle(CreateCart request, CancellationToken cancellationToken)
         {
+            // СОЗДАНИЕ НОВОГО ЭКЗЕМПЛЯРА КЛАССА
             var cart = new Cart
             {
                 machineId = request.machineId,
@@ -26,6 +22,8 @@ namespace Carts.Application.Carts.Commands.CreatingCart
                 Goods = "Корзина пуста"
             };
            // _dbContext.Carts.Attach(cart);
+
+            // СОХРАНЕНИЕ ЭКЗЕМПЛЯРА КЛАССА В БД
             await _dbContext.Carts.AddAsync(cart);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
