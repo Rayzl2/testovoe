@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
@@ -20,6 +20,7 @@ namespace Carts.Application.Carts.Commands.UpdatingCart
         public async Task<Guid> Handle(UpdateCart request,
             CancellationToken cancellationToken)
         {
+            // ПОЛУЧЕНИЕ ОБЪЕКТА БД ПО КЛЮЧУ SESSIONID
             var entity = await _dbContext.Carts.FirstOrDefaultAsync(cart =>
                     cart.SessionId == request.SessionId, cancellationToken);
 
