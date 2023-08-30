@@ -1,14 +1,10 @@
-﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AutoMapper;
 
 namespace Carts.Application.Common.Mapping
 {
     public interface IMap<T>
     {
+        //  ИНТЕРФЕЙС ДЛЯ ИНИЦИАЛИЗАЦИИ МАППИНГА
         void Mapping(Profile profile)
         {
             profile.CreateMap(typeof(T), GetType());
