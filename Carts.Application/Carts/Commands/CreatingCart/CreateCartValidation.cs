@@ -1,9 +1,4 @@
-﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FluentValidation;
 
 namespace Carts.Application.Carts.Commands.CreatingCart
 {
@@ -11,6 +6,7 @@ namespace Carts.Application.Carts.Commands.CreatingCart
     {
 
         public CreateCartValidation() {
+            // ГЛАВНОЕ ЧТОБЫ ID МАШИНЫ НЕ БЫЛ ПУСТЫМ
             RuleFor(createCart => createCart.machineId).NotEqual(Guid.Empty);
         }
 
