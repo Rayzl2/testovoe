@@ -1,12 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Carts.Application.Interfaces;
 
@@ -16,7 +9,10 @@ namespace Carts.Persistence
     {
         public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
+            // определение пути к подключению БД
             var connection = configuration.GetConnectionString("WebApiDatabase");
+            
+            // ОПРЕДЕЛЕНИЕ КОНФИГУРАЦИИ ДЛЯ ПОДКЛЮЧЕНИЯ К CARTS
             services.AddDbContext<CartsDbContext>(options =>
             {
                 options.UseNpgsql(connection);
@@ -24,10 +20,11 @@ namespace Carts.Persistence
             });
             services.AddScoped<ICartsDBContext>(provider => provider.GetService<CartsDbContext>());
 
-
+            // ОПРЕДЕЛЕНИЕ КОНФИГУРАЦИИ ДЛЯ ПОДКЛЮЧЕНИЯ К GOODS
             services.AddDbContext<GoodsDbContext>(options =>
             {
-                options.UseNpgsql(configuration.GetConnectionString("WebApiDatabase"));
+                options.UseNpgsql(connection);
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
             services.AddScoped<IGoodsDBContext>(provider => provider.GetService<GoodsDbContext>());
 
